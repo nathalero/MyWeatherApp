@@ -82,14 +82,24 @@
     color: #070f4e;
     font-family: "Quicksand", sans-serif;
   }
+
+  .links {
+    display: block;
+    padding: 20px;
+  }
+  .source{
+    display:block;
+    text-align: center;
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
   
   .creator {
     display: block;
     text-align: center;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 15px;
     color: #5f6caf;
-    padding: 20px;
     font-family: "Pacifico", cursive;
   }
   
