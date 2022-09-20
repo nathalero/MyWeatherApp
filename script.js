@@ -74,7 +74,7 @@ function showCurrentDate() {
     temperatureElement.innerHTML = `${temperature}`;
     description.innerHTML = response.data.weather[0].description;
     humidity.innerHTML = response.data.main.humidity;
-    wind.innerHTML = response.data.wind.speed;
+    wind.innerHTML = Math.round(response.data.wind.speed);
   }
   
   function searchEngine(event) {
