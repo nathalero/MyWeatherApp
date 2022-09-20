@@ -1,5 +1,6 @@
 .weather-app {
     display: block;
+    max-width: 600px;
     margin: 0 auto;
     background: linear-gradient(
       108.1deg,
