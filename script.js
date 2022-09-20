@@ -71,10 +71,15 @@ function showCurrentDate() {
     let description = document.querySelector("#weather-description");
     let humidity = document.querySelector("#humidity");
     let wind = document.querySelector("#wind");
+    let iconElement=document.querySelector("#icon");
     temperatureElement.innerHTML = `${temperature}`;
     description.innerHTML = response.data.weather[0].description;
     humidity.innerHTML = response.data.main.humidity;
     wind.innerHTML = Math.round(response.data.wind.speed);
+    iconElement.setAttribute(
+      "src",
+      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+      iconElement.setAttribute("alt", response.data.weather[0].description);
   }
   
   function searchEngine(event) {
