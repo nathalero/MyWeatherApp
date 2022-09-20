@@ -72,6 +72,9 @@ function showCurrentDate() {
     let humidity = document.querySelector("#humidity");
     let wind = document.querySelector("#wind");
     let iconElement=document.querySelector("#icon");
+
+    celciusTemperature= response.data.main.temp;
+
     temperatureElement.innerHTML = `${temperature}`;
     description.innerHTML = response.data.weather[0].description;
     humidity.innerHTML = response.data.main.humidity;
@@ -90,6 +93,27 @@ function showCurrentDate() {
     axios.get(apiUrl).then(showTemperature);
   }
   
+  function displayFahrenheitTemperature(event){
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#today-temperature");
+    let fahrenheitTemperature= (celciusTemperature * 9) / 5 + 32;
+    temperatureElement.innerHTML= Math.round(fahrenheitTemperature);
+}
+
+function displayCelciusTemperature(event){
+  event.preventDefault();
+  let temperatureElement=document.querySelector("#today-temperature");
+  temperatureElement.innerHTML=Math.round(celciusTemperature);
+}
+
+
+  let celciusTemperature=null;
+
   let searchFormEngine = document.querySelector("#search-city");
   searchFormEngine.addEventListener("submit", searchEngine);
   
+  let fahrenheitLink=document.querySelector("#fahrenheit-letter");
+  fahrenheitLink.addEventListener("click",displayFahrenheitTemperature);
+
+  let celciusLink=document.querySelector("#celcius-letter");
+celciusLink.addEventListener("click",displayCelciusTemperature);
