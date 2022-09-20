@@ -66,8 +66,12 @@
     position: relative;
     top: -20px;
     font-size: 13px;
-    color: blue;
+    color: rgb(33,33,33);
     font-weight: bold;
+  }
+
+  .celcius {
+    text-decoration: none;
   }
   
   .weather-description {
